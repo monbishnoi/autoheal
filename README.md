@@ -287,7 +287,7 @@ Built and validated in a personal agent harness running daily since April 2026:
 | Fix success rate | 100% (no rollbacks needed) |
 | Uptime since stabilization | 100% |
 
-The system survived 2.5 weeks of zero usage (owner traveling), variable load patterns, new tools being added, and infrastructure changes. Zero intervention required.
+_Reference implementation: https://github.com/monbishnoi/cal_
 
 ---
 
