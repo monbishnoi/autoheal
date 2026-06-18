@@ -14,7 +14,7 @@ Autonomous agents crash at 3 AM. You find out at 9 AM. You manually debug, fix, 
 
 A naive self-healing system counts errors and fixes the most frequent one. This fails because **symptoms recur until their cause is addressed.**
 
-AutoHeal uses causal chain analysis:
+AutoHeal uses** Wolverine mode: **causal chain analysis and agentic coding
 
 ```
 Root Cause (1x)
@@ -37,7 +37,8 @@ One root cause generates 10-20 downstream errors. Fix the root and the entire ca
 | 2 | **Diagnose** | Read error logs, trace causal chains, produce reports | Recurring patterns |
 | 3 | **Repair** | Apply fix, verify, rollback on failure | Root causes |
 
-Level 1 is your process manager's job (pm2, systemd, supervisor). AutoHeal focuses on Levels 2 and 3: the intelligence layer that understands *why* things break and fixes the cause.
+Level 1 is your process manager's job (pm2, systemd, supervisor). 
+AutoHeal focuses on Levels 2 and 3: the intelligence layer that understands *why* things break and fixes the cause.
 
 ---
 
