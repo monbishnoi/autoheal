@@ -36,15 +36,24 @@ One root cause generates 10-20 downstream errors. Fix the root and the entire ca
 
 ---
 
+## Why "Wolverine"
+
+Internally this started as "Wolverine mode," named after the regenerative healing factor. The analogy goes deeper than the surface: Wolverine's body doesn't just regenerate tissue. It identifies the wound and sends targeted repair to the right location. That's causal reasoning, not brute-force retry.
+
+Cut it, it heals. Not by growing back blindly. By understanding what broke.
+
+---
+
 ## Architecture: Three Levels
 
 | Level | Name | What It Does | Handles |
 |-------|------|--------------|---------|
-| 1 | **Recover** | Restart, retry, resume from checkpoint | ~80% of failures (transient) |
+| 1 | **Recover** | Restart, retry, validate and repair session state | ~80% of failures (transient) |
 | 2 | **Diagnose** | Read error logs, trace causal chains, produce reports | Recurring patterns |
 | 3 | **Repair** | Apply fix, verify, rollback on failure | Root causes |
 
-Level 1 is your process manager's job (pm2, systemd, supervisor). 
+Level 1 has two layers. Your process manager (pm2, systemd) handles crash restarts. But the harness itself also recovers gracefully: validating message history before each API call, repairing corrupted conversation state, and bridging context windows before they exhaust. These are not restarts. They're the system healing its own session without interruption.
+
 AutoHeal focuses on Levels 2 and 3: the intelligence layer that understands *why* things break and fixes the cause.
 
 ---
