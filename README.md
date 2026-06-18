@@ -14,7 +14,7 @@ Autonomous agents crash at 3 AM. You find out at 9 AM. You manually debug, fix, 
 
 A naive self-healing system counts errors and fixes the most frequent one. This fails because **symptoms recur until their cause is addressed.**
 
-AutoHeal uses ** Wolverine mode: ** causal chain analysis and agentic coding
+AutoHeal uses **Wolverine mode** : causal chain analysis and agentic coding
 
 ```
 Root Cause (1x)
