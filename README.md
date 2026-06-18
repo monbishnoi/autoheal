@@ -14,7 +14,14 @@ Autonomous agents crash at 3 AM. You find out at 9 AM. You manually debug, fix, 
 
 A naive self-healing system counts errors and fixes the most frequent one. This fails because **symptoms recur until their cause is addressed.**
 
-AutoHeal uses **Wolverine mode** : causal chain analysis and agentic coding
+AutoHeal uses **Wolverine mode** : causal chain analysis and agentic coding.
+
+## Why "Wolverine"
+
+
+Internally, this started as "Wolverine mode" — named after the regenerative healing factor. Cut Wolverine, he heals. Crash your agent, it diagnoses and repairs.
+
+The analogy holds deeper than the surface: Wolverine doesn't just regenerate tissue — his body identifies the wound and sends targeted repair to the right location. That's causal reasoning, not brute-force retry.
 
 ```
 Root Cause (1x)
